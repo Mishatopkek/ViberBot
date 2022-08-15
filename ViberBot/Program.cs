@@ -7,7 +7,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<MsSqlContext>(options =>
-    options.UseSqlServer(builder.Configuration["ConnectionStrings:mssql"]));
+    options.UseSqlServer(Environment.GetEnvironmentVariable("CONNECTION_STRING")!));
 builder.Services.AddScoped<ISendMessageService, SendMessageService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

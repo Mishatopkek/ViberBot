@@ -9,8 +9,7 @@ public static class RestSharpExtension
     {
         RestClient client = new RestClient("https://chatapi.viber.com/pa/");
         RestRequest request = new RestRequest(resource);
-        //Insert viber token here
-        request.AddHeader("X-Viber-Auth-Token", "");
+        request.AddHeader("X-Viber-Auth-Token", Environment.GetEnvironmentVariable("VIBER_AUTH_TOKEN")!);
         string stringBody = JsonConvert.SerializeObject(body, Formatting.Indented, new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore

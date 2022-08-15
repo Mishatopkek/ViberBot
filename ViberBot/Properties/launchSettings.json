@@ -16,7 +16,9 @@
       "launchUrl": "swagger",
       "applicationUrl": "http://localhost:5000;",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "VIBER_AUTH_TOKEN": "",
+        "CONNECTION_STRING": "Server=localhost;Database=Track;Trusted_Connection=True;"
       }
     },
     "IIS Express": {
